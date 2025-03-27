@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'data/font_data.dart';
 import 'models/font_model.dart';
 import 'models/game_model.dart';
@@ -7,7 +8,12 @@ import 'screens/game_screen.dart';
 import 'screens/result_screen.dart';
 import 'theme/app_theme.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Preload Google Fonts to ensure they work on all platforms
+  await GoogleFonts.pendingFonts();
+  
   runApp(const FontZombieApp());
 }
 

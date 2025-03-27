@@ -20,6 +20,8 @@ Font Zombie is a game that tests your typography knowledge. A letter is displaye
 - Flutter SDK (latest version recommended)
 - Dart SDK
 - Web browser (Chrome recommended for development)
+- For Android builds: Android SDK and Android Studio
+- For iOS builds: Xcode and CocoaPods (Mac only)
 
 ### Installation
 
@@ -46,6 +48,90 @@ flutter pub get
 ```bash
 flutter run -d chrome
 ```
+
+### Building for Mobile Devices
+
+<details>
+<summary>Building for Android</summary>
+
+1. Make sure your Android development environment is set up:
+
+#### Android
+
+1. Make sure your Android development environment is set up:
+
+```bash
+flutter doctor
+```
+
+2. Connect your Android device or start an emulator
+
+3. Build a debug APK and install it on the connected device:
+
+```bash
+flutter run
+```
+
+4. Build a release APK for distribution:
+
+```bash
+flutter build apk --release
+```
+
+The APK will be available at `build/app/outputs/flutter-apk/app-release.apk`
+
+5. Install the release APK on a device:
+
+```bash
+adb install build/app/outputs/flutter-apk/app-release.apk
+```
+
+6. Alternatively, build an Android App Bundle for Google Play Store:
+
+```bash
+flutter build appbundle --release
+```
+
+</details>
+
+<details>
+<summary> iOS (Mac only) </summary>
+
+1. Make sure your iOS development environment is set up:
+
+```bash
+flutter doctor
+```
+
+2. Install CocoaPods if not already installed:
+
+```bash
+sudo gem install cocoapods
+```
+
+3. Build for iOS in debug mode and run on a connected device or simulator:
+
+```bash
+flutter run -d ios
+```
+
+4. Build a release version for distribution:
+
+```bash
+flutter build ios --release
+```
+
+5. For App Store distribution, open the Xcode workspace:
+
+```bash
+open ios/Runner.xcworkspace
+```
+
+6. In Xcode:
+   - Select the appropriate development team
+   - Choose a connected device or simulator
+   - Product → Archive
+   - Follow the steps to validate and distribute your app
 
 ## How to Play
 
