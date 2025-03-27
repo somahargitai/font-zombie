@@ -6,6 +6,7 @@ import 'models/game_model.dart';
 import 'screens/start_screen.dart';
 import 'screens/game_screen.dart';
 import 'screens/result_screen.dart';
+import 'screens/font_explorer_screen.dart';
 import 'theme/app_theme.dart';
 
 void main() async {
@@ -38,7 +39,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-enum AppScreen { start, game, result }
+enum AppScreen { start, game, result, explorer }
 
 class _MainScreenState extends State<MainScreen> {
   AppScreen _currentScreen = AppScreen.start;
@@ -60,6 +61,12 @@ class _MainScreenState extends State<MainScreen> {
     setState(() {
       _gameModel.resetGame();
       _currentScreen = AppScreen.game;
+    });
+  }
+  
+  void _openFontExplorer() {
+    setState(() {
+      _currentScreen = AppScreen.explorer;
     });
   }
 
@@ -92,6 +99,7 @@ class _MainScreenState extends State<MainScreen> {
         return StartScreen(
           fonts: _fonts,
           onStartGame: _startGame,
+          onOpenFontExplorer: _openFontExplorer,
         );
       case AppScreen.game:
         return GameScreen(
@@ -106,6 +114,11 @@ class _MainScreenState extends State<MainScreen> {
           correctFont: _correctFont!,
           onBackToHome: _backToHome,
           onNextQuestion: _nextQuestion,
+        );
+      case AppScreen.explorer:
+        return FontExplorerScreen(
+          fonts: _fonts,
+          onBackToHome: _backToHome,
         );
     }
   }

@@ -4,11 +4,13 @@ import '../models/font_model.dart';
 class StartScreen extends StatelessWidget {
   final List<FontModel> fonts;
   final VoidCallback onStartGame;
+  final VoidCallback onOpenFontExplorer;
 
   const StartScreen({
     super.key,
     required this.fonts,
     required this.onStartGame,
+    required this.onOpenFontExplorer,
   });
 
   @override
@@ -57,7 +59,7 @@ class StartScreen extends StatelessWidget {
               ),
             ),
             
-            const SizedBox(height: 80),
+            const SizedBox(height: 60),
             
             // Start Game Button
             ElevatedButton(
@@ -67,6 +69,19 @@ class StartScreen extends StatelessWidget {
                 textStyle: const TextStyle(fontSize: 24),
               ),
               child: const Text('START GAME'),
+            ),
+            
+            const SizedBox(height: 20),
+            
+            // Font Explorer Button
+            OutlinedButton(
+              onPressed: onOpenFontExplorer,
+              style: OutlinedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                textStyle: const TextStyle(fontSize: 18),
+                side: BorderSide(color: Colors.purple[400]!),
+              ),
+              child: const Text('EXPLORE FONTS'),
             ),
             
             const SizedBox(height: 20),
