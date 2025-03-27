@@ -8,10 +8,44 @@ class GameModel {
   int score = 0;
   int totalQuestions = 0;
   bool isGameOver = false;
-  
+
   final List<String> alphabet = [
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    'Aa',
+    'Bb',
+    'Cc',
+    'Dd',
+    'Ee',
+    'Ff',
+    'Gg',
+    'Hh',
+    'Ii',
+    'Jj',
+    'Kk',
+    'Ll',
+    'Mm',
+    'Nn',
+    'Oo',
+    'Pp',
+    'Qq',
+    'Rr',
+    'Ss',
+    'Tt',
+    'Uu',
+    'Vv',
+    'Ww',
+    'Xx',
+    'Yy',
+    'Zz',
   ];
 
   GameModel({required this.fonts}) {
@@ -54,4 +88,4 @@ class GameModel {
     if (totalQuestions == 0) return 0;
     return score / totalQuestions * 100;
   }
-} 
+}

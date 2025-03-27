@@ -36,7 +36,7 @@ class ResultScreen extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
               decoration: BoxDecoration(
-                color: isCorrect ? Colors.green.withOpacity(0.2) : Colors.red.withOpacity(0.2),
+                color: isCorrect ? Colors.green.withAlpha(51) : Colors.red.withAlpha(51),
                 border: Border(
                   bottom: BorderSide(
                     color: isCorrect ? Colors.green : Colors.red,

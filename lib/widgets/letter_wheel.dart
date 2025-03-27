@@ -75,17 +75,31 @@ class _LetterWheelState extends State<LetterWheel> {
               return Container(
                 margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 decoration: BoxDecoration(
-                  color: isSelected ? Colors.green.withOpacity(0.3) : Colors.transparent,
+                  color: isSelected ? Colors.green.withAlpha(77) : Colors.transparent,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
-                  child: Text(
-                    widget.letters[index],
-                    style: TextStyle(
-                      fontSize: isSelected ? 32 : 24,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                      color: isSelected ? Colors.white : Colors.grey[400],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        widget.letters[index][0],
+                        style: TextStyle(
+                          fontSize: isSelected ? 32 : 24,
+                          fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                          color: isSelected ? Colors.white : Colors.grey[400],
+                        ),
+                      ),
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.03),
+                      Text(
+                        widget.letters[index].substring(1),
+                        style: TextStyle(
+                          fontSize: isSelected ? 32 : 24,
+                          fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                          color: isSelected ? Colors.white : Colors.grey[400],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               );

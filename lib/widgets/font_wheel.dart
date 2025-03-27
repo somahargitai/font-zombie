@@ -88,7 +88,7 @@ class _FontWheelState extends State<FontWheel> {
               return Container(
                 margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                 decoration: BoxDecoration(
-                  color: isSelected ? Colors.green.withOpacity(0.3) : Colors.transparent,
+                  color: isSelected ? Colors.green.withAlpha(77) : Colors.transparent,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
